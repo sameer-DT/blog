@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Charts</title>
+    <style>
+        .horizontal{
+            border: 5px solid orangered;
+            width: 100%;
+            height: 700px;
+        }
+        .bar {
+            color: white;
+            text-align: right;
+            padding: 10px;
+            margin: 20px 20px;
+            border-radius: 5px;
+            transition: width 0.3s ease;
+        }
+        .vertical{
+            border: 5px solid navy;
+            width: 100%;
+            height: 600px;
+            display: flex;
+            color: white;
+            text-align: right;
+            padding: 10px;
+            margin: 20px 20px;
+            gap: 10px;
+            align-items: flex-end;
+        }
+        .donut-chart {
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            background: conic-gradient(
+                rgb(221, 47, 47) 0% 50%,   
+                #0063b4 50% 70%,  
+                #ffe600 70% 73%,   
+                #f1721d 73% 90% ,  
+                navy 90% 100%
+            );
+            position: relative;
+        }
+            .donut-chart::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100px;
+                height: 100px;
+                background-color: #f5f5f5; 
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+            }            
+            
+            .bouncingball{
+            width: 60px;
+            height: 60px;
+            background-color: red;
+            border-radius: 50%;
+            position: relative;
+            top: 300px;
+            animation: bounce 0.5s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                top: 0;
+                animation-timing-function: ease-in;
+            }
+            50% {
+                top: 300px;
+                animation-timing-function: ease-out;
+            }
+        }
+        h1 .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+            top: -5px;
+            left: 105%;
+            }
+
+            h1:hover .tooltiptext {
+            visibility: visible;
+            }
+    </style>
+</head>
+<body>
+   <div class="container">
+        <div class="text-bg-primary p-3 fs-3 w-100">Horizontal Bar Chart</div>
+        <hr>
+        <div class="horizontal">
+            <div class="bar" style="width: 70%; background-color: aqua;">70%</div>
+            <div class="bar" style="width: 50%; background-color: black;">50%</div>
+            <div class="bar bg-success" style="width: 90%;">90%</div>
+            <div class="bar" style="width: 30%; background-color: brown;">30%</div>
+            <div class="bar" style="width: 80%; background-color: orange;">80%</div>
+            <div class="bar" style="width: 10%; background-color: red;">10%</div>
+            <div class="bar" style="width: 28%; background-color: orangered;">28%</div>
+            <div class="bar" style="width: 43%;background-color: lightcoral;">43%</div>
+            <div class="bar" style="width: 62%;background-color: deeppink;">62%</div>
+            <div class="bar" style="width: 37%; background-color: navy;">37%</div>
+        </div>
+    <br><br>
+    <hr>
+            <div class="text-bg-primary p-3 fs-3 w-100">vertical Bar Chart</div>
+            <hr>
+            <div class="vertical">
+                <div class="bar" style="height: 34%; background-color: navy;">34%</div>
+                <div class="bar" style="height: 78%; background-color: lightcoral;">78%</div>
+                <div class="bar bg-success" style="height: 98%;">98%</div>
+                <div class="bar" style="height: 67%; background-color: aqua;">67%</div>
+                <div class="bar" style="height: 89%; background-color: orange;">89%</div>
+                <div class="bar" style="height: 7%; background-color: red;">7%</div>
+                <div class="bar" style="height: 23%; background-color: orangered;">23%</div>
+                <div class="bar" style="height: 74%; background-color: deeppink;">74%</div>
+                <div class="bar" style="height: 11%; background-color: black;">11%</div>
+                <div class="bar" style="height: 58%; background-color: brown;">58%</div>
+            </div>
+            <br><br>
+    <hr>
+    <div class="text-bg-primary p-3 fs-3 w-100">Pie Chart</div>
+    <hr>
+    <center>
+        <div class="donut-chart">
+            
+            <h1 style="position: relative;right:45px;top: 40px; color: white; font-size: 18px;">10%
+                <span class="tooltiptext">Pineapple Sales</span>
+            </h1>
+            <h1 style="position: relative;right:120px;top: 120px; color: white; font-size: 18px;">17%
+                <span class="tooltiptext">Watermelon Sales</span>
+            </h1>
+            <h1 style="position: relative;right:180px;top: 200px; color: red; font-size: 18px;">3%
+                <span class="tooltiptext">Banana Sales</span>
+            </h1>
+            <h1 style="position: absolute;right:300px;top:350px; color: white; font-size: 18px;">20%
+                <span class="tooltiptext">Mango sales</span>
+            </h1>
+            <h1 style="position: absolute;right:110px;top:220px; color: white; font-size: 18px;">50%
+                <span class="tooltiptext">Apples Sales</span>
+            </h1>
+        </div>
+    </center>
+    <br><br>
+    <hr>
+    <div class="text-bg-primary p-3 fs-3 w-100">Bouncing Ball Animation</div>
+    <hr>
+
+        <div style="width: 50%;height:425px; border: 2px solid black;background-color: lightblue;">
+            <center>
+                <div class="bouncingball"></div>
+            </center>
+        </div>
+        <br><br><br>
+        <hr><hr>
+   </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

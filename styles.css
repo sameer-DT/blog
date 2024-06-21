@@ -1,0 +1,22 @@
+.d1{
+    text-align: center;
+}
+.of{
+      height: 250px;
+}
+a:hover{
+    border-radius: 30px;
+    box-shadow: 5px red;
+    width: 100px;
+    height: 50px;
+    transition: 2s;
+    background-color:pink;
+    color: white;
+    display: flex;
+    gap: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+
